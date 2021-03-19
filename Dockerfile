@@ -19,7 +19,7 @@ RUN apt-get install -y \
             libmemcachedutil2 \
             build-essential \
             libmemcached-dev \
-            gnupg2 \a
+            gnupg2 \
             libpq-dev \
             libpq5 \
             libz-dev \
