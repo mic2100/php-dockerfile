@@ -1,7 +1,7 @@
 PHP Dockerfile
 ==============
 
-PHP 7.4
+PHP 8.0
 
 Includes:
 

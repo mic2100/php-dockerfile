@@ -1,4 +1,4 @@
-FROM php:7.4-fpm
+FROM php:8.0-fpm
 
 RUN apt-get update
 RUN apt-get install -y \
@@ -19,7 +19,7 @@ RUN apt-get install -y \
             libmemcachedutil2 \
             build-essential \
             libmemcached-dev \
-            gnupg2 \
+            gnupg2 \a
             libpq-dev \
             libpq5 \
             libz-dev \
