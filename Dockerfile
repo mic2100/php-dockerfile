@@ -1,4 +1,4 @@
-FROM php:8.0-fpm
+FROM php:8.1-fpm
 
 RUN apt-get update
 RUN apt-get install -y \
@@ -32,19 +32,15 @@ RUN docker-php-ext-configure gd \
     --with-webp=/usr/include/ \
     --with-freetype=/usr/include/ \
     --with-jpeg=/usr/include/
-RUN docker-php-ext-install gd
-
-RUN docker-php-ext-configure imap \
+RUN docker-php-ext-install gd \
+    && docker-php-ext-configure imap \
     --with-kerberos \
-    --with-imap-ssl
-RUN docker-php-ext-install imap
-
-RUN docker-php-ext-configure zip
-
-RUN docker-php-ext-install zip
-
-RUN docker-php-ext-configure intl
-RUN docker-php-ext-install intl
+    --with-imap-ssl \
+    && docker-php-ext-install imap \
+    && docker-php-ext-configure zip \
+    && docker-php-ext-install zip \
+    && docker-php-ext-configure intl \
+    && docker-php-ext-install intl
 
 RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-install exif
