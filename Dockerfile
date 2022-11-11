@@ -19,7 +19,7 @@ RUN apt-get install -y \
             libmemcachedutil2 \
             build-essential \
             libmemcached-dev \
-            gnupg2 \a
+            gnupg2 \
             libpq-dev \
             libpq5 \
             libz-dev \
@@ -52,6 +52,9 @@ RUN docker-php-ext-install fileinfo
 RUN pecl install -o -f redis \
 &&  rm -rf /tmp/pear \
 &&  docker-php-ext-enable redis
+
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug
 
 RUN curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
