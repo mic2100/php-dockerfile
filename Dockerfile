@@ -1,4 +1,4 @@
-FROM php:8.4-fpm-bookworm
+FROM php:8.5-fpm-bookworm
 
 RUN apt-get update
 RUN apt-get install -y \
@@ -25,7 +25,7 @@ RUN apt-get install -y \
             cron \
             nano
 
-# IMAP support. In PHP 8.4 the imap extension was removed from core and moved to
+# IMAP support. In PHP 8.4+ the imap extension was removed from core and moved to
 # PECL, and Debian 13 dropped the libc-client-dev package. We therefore pin to
 # bookworm and rebuild the UW IMAP c-client library (headers + lib) from the
 # Debian source, then compile the PECL imap extension against it.
