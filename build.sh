@@ -16,4 +16,8 @@ git checkout 8.2
 docker build -t mic2100/php-fpm:8.2 .
 docker push mic2100/php-fpm:8.2
 
+git checkout 8.4
+docker build -t mic2100/php-fpm:8.4 .
+docker push mic2100/php-fpm:8.4
+
 git checkout master
