@@ -65,6 +65,7 @@ RUN docker-php-ext-install gd \
     && docker-php-ext-install intl
 
 RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-install mysqli
 RUN docker-php-ext-install exif
 RUN docker-php-ext-install fileinfo
 RUN pecl install -o -f redis \
